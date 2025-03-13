@@ -12,6 +12,8 @@ body {
 
 /* About Me Section Styling */
 /* About Me Section Styling */
+/* About Me Section Styling */
+/* About Me Section Styling */
 #about {
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   padding: 100px 0;
@@ -139,8 +141,6 @@ body {
 .about-text {
   animation: slideInRight 1s ease-out;
 }
-
-
 
   /* Vertical Navigation Styling */
 .vertical-nav {
@@ -298,7 +298,7 @@ body {
 
 
   /* Timeline */
-  /* Education Section Styling */
+ /* Education Section Styling */
 #education {
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   padding: 100px 0;
@@ -323,48 +323,30 @@ body {
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: 20px; /* Move line to the left for mobile */
   top: 0;
   width: 2px;
   height: 100%;
   background-color: #4f6c8c;
-  transform: translateX(-50%);
 }
 
 .timeline-item {
-  padding: 20px 40px;
+  padding: 20px;
   position: relative;
-  width: 50%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.timeline-item:nth-child(odd) {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
-  text-align: left;
+  width: 100%; /* Full width on mobile */
+  margin-left: 40px; /* Add space for the timeline line */
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
   top: 20px;
+  left: -10px; /* Adjust dot position for mobile */
   width: 20px;
   height: 20px;
   background-color: #4f6c8c;
   border-radius: 50%;
   z-index: 1;
-}
-
-.timeline-item:nth-child(odd)::before {
-  right: -10px;
-}
-
-.timeline-item:nth-child(even)::before {
-  left: -10px;
 }
 
 .timeline-content {
@@ -380,16 +362,37 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Animations */
-.animate__animated.animate__fadeInLeft {
-  animation-delay: 0.2s;
-}
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  .timeline::before {
+    left: 50%; /* Center line on larger screens */
+    transform: translateX(-50%);
+  }
 
-.animate__animated.animate__fadeInRight {
-  animation-delay: 0.4s;
+  .timeline-item {
+    width: 50%; /* Two columns on larger screens */
+    margin-left: 0;
+  }
+
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd)::before {
+    right: -10px; /* Adjust dot position for odd items */
+    left: auto;
+  }
+
+  .timeline-item:nth-child(even)::before {
+    left: -10px; /* Adjust dot position for even items */
+  }
 }
-  
- 
   
  /* Skills Section Styling */
 /* Technical Skills Styling */
